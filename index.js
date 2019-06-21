@@ -16,13 +16,13 @@ const start = async () => {
 	// Load user configuration.
 	try {
 		config = require(configPath);
-	} catch (err){
-		if (err.message.includes('Cannot find module')) {
+	} catch (error){
+		if (error.message.includes('Cannot find module')) {
 			console.error('Please create a config.json from the example config.');
 		}
 
-		if (err.message.includes('Unexpected')) {
-			console.error(err);
+		if (error.message.includes('Unexpected')) {
+			console.error(error);
 		}
 
 		process.exit();
