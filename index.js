@@ -66,23 +66,11 @@ const start = async () => {
 
 		const heads = table.find('.head');
 
-		if(heads.length > 2) {
-			process.exit();
-		}
-
 		const showOfTheDayHead = $(heads[1]);
-
-		if(!showOfTheDayHead) {
-			process.exit();
-		}
 
 		const showTr = showOfTheDayHead.next();
 
 		const showAnchor = showTr.find('a');
-
-		if(!showAnchor) {
-			process.exit();
-		}
 
 		showHref = showAnchor.attr('href');
 
@@ -111,18 +99,11 @@ const start = async () => {
 
 		const anchors = table.find('a[title="Download"]');
 
-		anchors.each((index,anchor) => {
+		anchors.each((index, anchor) => {
 			const href = $(anchor).attr('href');
 			downloadUrls.push(href);
 		});
-	} catch(error) {
-		console.error('TV Vault show of the day page request failed!');
-		console.error(error);
 
-		process.exit();
-	}
-
-	try {
 		if(!downloadUrls.length) {
 			console.log("No download links for today's show of the day!");
 			process.exit();
