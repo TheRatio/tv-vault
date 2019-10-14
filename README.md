@@ -12,4 +12,4 @@ Add a `downloadPath` to `config.json` to have the torrents added to your torrent
 
 ## To run
 
-`npm start` to run the script. It is recommended to run this script at most once per day, as Show Of The Day does not change throughout the 24 hour period.
+`npm start` to run the script. It is recommended to run this script at most once per day, as Show Of The Day only changes daily.
